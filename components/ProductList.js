@@ -5,6 +5,7 @@ const ProductList = ({products}) => {
   return <ol>
     {products.map(product => 
       <Product
+        key={product.id}
         imgSrc={product.mainImage.ref}
         name={product.name}
         price={'$' + (product.defaultPriceInCents/100).toFixed(2)}
