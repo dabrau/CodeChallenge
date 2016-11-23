@@ -18,11 +18,10 @@ const sortByProperty = (state = SortByProperties.NAME, action) => {
   }
 }
 
-const defaultPriceFilter = 99999999999999
-const priceFilter = (state = defaultPriceFilter, action) => {
+const priceFilter = (state = false, action) => {
   switch (action.type) {
     case SET_PRICE_FILTER:
-      return action.price || defaultPriceFilter
+      return action.filter
     default:
       return state
   }
