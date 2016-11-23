@@ -29,12 +29,13 @@ const getVisibleProducts = (products, priceFilter, sortBy) => {
     case SortByOptions.PRICE_DSC:
       visibleProducts.sort((a,b) => b.defaultPriceInCents - a.defaultPriceInCents)
       break
-    case SortByOptions.Date:
-      visibleProducts.sort((a,b) => b.createdAt - b.createdAt)
+    case SortByOptions.DATE:
+      visibleProducts.sort((a,b) => b.createdAt - a.createdAt)
       break
   }
 
   return visibleProducts
+
 }
 
 const mapStateToProps = state => {
