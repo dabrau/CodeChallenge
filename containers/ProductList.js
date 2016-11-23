@@ -1,4 +1,4 @@
-import { SortByProperties } from '../actions'
+import { SortByOptions } from '../actions'
 import ProductList from '../components/ProductList'
 
 const getVisibleProducts = (products, priceFilter, sortBy) => {
@@ -9,7 +9,7 @@ const getVisibleProducts = (products, priceFilter, sortBy) => {
   }
 
   switch (sortBy) {
-    case SortByProperties.Name:
+    case SortByOptions.NAME:
       visibleProducts.sort((a, b) => {
         let nameA = a.name.toUpperCase() // ignore upper and lowercase
         let nameB = b.name.toUpperCase() // ignore upper and lowercase
@@ -23,13 +23,13 @@ const getVisibleProducts = (products, priceFilter, sortBy) => {
         return 0;
       })
       break
-    case SortByProperties.PRICE_ASC:
+    case SortByOptions.PRICE_ASC:
       visibleProducts.sort((a, b) => a.defaultPriceInCents - b.defaultPriceInCents)
       break
-    case SortByProperties.PRICE_DSC:
+    case SortByOptions.PRICE_DSC:
       visibleProducts.sort((a,b) => b.defaultPriceInCents - a.defaultPriceInCents)
       break
-    case SortByProperties.Date:
+    case SortByOptions.Date:
       visibleProducts.sort((a,b) => b.createdAt - b.createdAt)
       break
   }
@@ -39,7 +39,7 @@ const getVisibleProducts = (products, priceFilter, sortBy) => {
 
 const mapStateToProps = (state) => {
   return {
-    products: getVisibleProducts(state.products, state.priceFilter, state.sortByProperty)
+    products: getVisibleProducts(state.products, state.priceFilter, state.sortBy)
   }
 }
 
