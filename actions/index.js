@@ -21,17 +21,6 @@ export const fetchProducts = () => {
   }
 }
 
-export const SortByProperties = {
-  NAME: 'NAME',
-  PRICE: 'PRICE',
-  DATE: 'DATE'
-}
-
-export const SortOrder = {
-  ASC: 'ASC',
-  DSC: 'DSC'
-}
-
 export const setPriceFilter = (price) => {
   return {
     type: SET_PRICE_FILTER,
@@ -39,12 +28,22 @@ export const setPriceFilter = (price) => {
   }
 }
 
+export const SortByProperties = {
+  NAME: 'NAME',
+  PRICE: 'PRICE',
+  DATE: 'DATE'
+}
 
 export const setSortByProperty = (property) => {
   return {
     type: SET_SORT_BY_PROPERTY,
     property
   }
+}
+
+export const SortOrder = {
+  ASC: 'ASC',
+  DSC: 'DSC'
 }
 
 export const setSortOrder = (order) => {
