@@ -27,10 +27,11 @@ const sortOrder = (state = SortOrder.ASC, action) => {
   }
 }
 
-const priceFilter = (state = 99999999999999, action) => {
+const defaultPriceFilter = 99999999999999
+const priceFilter = (state = defaultPriceFilter, action) => {
   switch (action.type) {
     case SET_PRICE_FILTER:
-      return action.price
+      return action.price || defaultPriceFilter
     default:
       return state
   }
