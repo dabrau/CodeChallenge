@@ -1,4 +1,4 @@
-import { RECEIVE_PRODUCTS, SET_SORT_BY_PROPERTY, SortByProperties, SET_SORT_ORDER, SortOrder, SET_PRICE_FILTER } from '../actions'
+import { RECEIVE_PRODUCTS, SET_SORT_BY_PROPERTY, SortByProperties, SET_PRICE_FILTER } from '../actions'
 
 const products = (state = [], action) => {
   switch (action.type) {
@@ -13,15 +13,6 @@ const sortByProperty = (state = SortByProperties.NAME, action) => {
   switch (action.type) {
     case SET_SORT_BY_PROPERTY:
       return action.property
-    default:
-      return state
-  }
-}
-
-const sortOrder = (state = SortOrder.ASC, action) => {
-  switch (action.type) {
-    case SET_SORT_ORDER:
-      return action.order
     default:
       return state
   }
@@ -42,7 +33,6 @@ import { combineReducers } from 'redux'
 const storeApp = combineReducers({
   products,
   sortByProperty,
-  sortOrder,
   priceFilter
 })
 

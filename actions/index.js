@@ -2,7 +2,6 @@ import fetch from 'isomorphic-fetch'
 
 export const SET_PRICE_FILTER = 'SET_PRICE_FILTER'
 export const SET_SORT_BY_PROPERTY = 'SET_SORT_BY_PROPERTY'
-export const SET_SORT_ORDER = 'SET_SORT_ORDER'
 export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS'
 
 export function receiveProducts(products) {
@@ -29,9 +28,10 @@ export const setPriceFilter = (price) => {
 }
 
 export const SortByProperties = {
-  NAME: 'NAME',
-  PRICE: 'PRICE',
-  DATE: 'DATE'
+  NAME: 'Name',
+  PRICE_ASC: 'Price: Low to High',
+  PRICE_DSC: 'Price: High to Low'
+  DATE: 'Newest Arrivals'
 }
 
 export const setSortByProperty = (property) => {
@@ -40,15 +40,4 @@ export const setSortByProperty = (property) => {
     property
   }
 }
-
-export const SortOrder = {
-  ASC: 'ASC',
-  DSC: 'DSC'
-}
-
-export const setSortOrder = (order) => {
-  return {
-    type: SET_SORT_ORDER,
-    order
-  }
 }
