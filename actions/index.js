@@ -34,6 +34,8 @@ export const SortByOptions = {
   DATE: 'Newest Arrivals'
 }
 
+export const SortByDefaultOption = SortByOptions.NAME
+
 export const setSortBy = (option) => {
   return {
     type: SET_SORT_BY,

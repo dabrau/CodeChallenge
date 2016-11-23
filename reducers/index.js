@@ -1,4 +1,4 @@
-import { RECEIVE_PRODUCTS, SET_SORT_BY, SortByOptions, SET_PRICE_FILTER } from '../actions'
+import { RECEIVE_PRODUCTS, SET_SORT_BY, SortByDefaultOption, SET_PRICE_FILTER } from '../actions'
 
 const products = (state = [], action) => {
   switch (action.type) {
@@ -9,7 +9,7 @@ const products = (state = [], action) => {
   }
 }
 
-const sortBy = (state = SortByOptions.NAME, action) => {
+const sortBy = (state = SortByDefaultOption, action) => {
   switch (action.type) {
     case SET_SORT_BY:
       return action.option

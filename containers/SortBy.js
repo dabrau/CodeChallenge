@@ -1,12 +1,10 @@
-import { SortByOptions, setSortBy } from '../actions'
+import { SortByOptions, SortByDefaultOption, setSortBy } from '../actions'
 import SortBy from '../components/SortBy'
-
-const getOptions = () => Object.keys(SortByOptions).map(option => SortByOptions[option])
 
 const mapStateToProps = (state) => {
   return {
-    selected: state.sortBy,
-    options: getOptions()
+    defaultOption: SortByDefaultOption,
+    options: Object.keys(SortByOptions).map(option => SortByOptions[option])
   }
 }
 

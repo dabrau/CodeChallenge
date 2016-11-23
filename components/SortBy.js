@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react'
 
-const SortBy = ({selected, onSelect, options}) => (
+const SortBy = ({defaultOption, onSelect, options}) => (
   <div>
-    <label>Sort by
-      <select onChange={(e) => onSelect(e.target.value)} label="Sort by" defaultValue={selected}>
+    <label>
+      Sort by
+      <select onChange={(e) => onSelect(e.target.value)} label="Sort by" defaultValue={defaultOption}>
         {options.map(option => 
            <option key={option} value={option} >{option}</option>
         )}
@@ -13,7 +14,7 @@ const SortBy = ({selected, onSelect, options}) => (
 )
 
 SortBy.propTypes = {
-  selected: PropTypes.string.isRequired,
+  defaultOption: PropTypes.string.isRequired,
   onSelect: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(PropTypes.string).isRequired
 }
