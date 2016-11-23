@@ -37,7 +37,7 @@ const getVisibleProducts = (products, priceFilter, sortBy) => {
   return visibleProducts
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     products: getVisibleProducts(state.products, state.priceFilter, state.sortBy)
   }

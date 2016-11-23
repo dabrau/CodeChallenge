@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
 import Product from './Product'
 
-const ProductList = ({products}) => {
-  return <ol>
+const ProductList = ({products}) => (
+  <ol>
     {products.map(product => 
       <Product
         key={product.id}
@@ -12,7 +12,7 @@ const ProductList = ({products}) => {
       />
     )}
   </ol>
-}
+)
 
 ProductList.propTypes = {
   products: PropTypes.arrayOf(PropTypes.shape({

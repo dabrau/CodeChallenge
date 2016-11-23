@@ -1,14 +1,14 @@
 import React, { PropTypes } from 'react'
 
-const Product = ({imgSrc, name, price}) => {
-  return <li>
+const Product = ({imgSrc, name, price}) => (
+  <li>
     <img src={imgSrc} />
     <div>
       <div>{name}</div>
       <div>{price}</div>
     </div>
   </li>
-}
+)
 
 Product.propTypes = {
   imgSrc: PropTypes.string.isRequired,
