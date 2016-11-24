@@ -7,9 +7,13 @@ import ProductList from '../containers/ProductList'
 const App = () => (
   <div>
     <Header />
-    <PriceFilter />
-    <SortBy />
-    <ProductList />
+    <div className="product-input-wrapper">
+      <div className="input-wrapper">
+        <PriceFilter />
+        <SortBy />
+      </div>
+      <ProductList />
+    </div>
   </div>
 )
 

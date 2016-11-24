@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
 const Product = ({imgSrc, name, price}) => (
-  <li>
+  <li className="item">
     <img src={imgSrc} />
     <div>
       <div>{name}</div>
