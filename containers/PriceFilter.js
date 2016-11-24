@@ -5,7 +5,7 @@ import { setPriceFilter } from '../actions'
 const PriceFilter = ({dispatch}) => (
   <div>
     <input id="price-filter" type="checkbox" onChange={e => dispatch(setPriceFilter(e.target.checked))} />
-    <label htmlFor="price-filter">Under $20</label>
+    <label htmlFor="price-filter">Over $20</label>
   </div>
 )
 

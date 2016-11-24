@@ -6,7 +6,7 @@ const getVisibleProducts = (products, priceFilter, sortBy) => {
   let visibleProducts = [...products]
 
   if (priceFilter) {
-    visibleProducts = visibleProducts.filter(product => product.defaultPriceInCents < 20000)
+    visibleProducts = visibleProducts.filter(product => product.defaultPriceInCents > 2000)
   }
 
   switch (sortBy) {
