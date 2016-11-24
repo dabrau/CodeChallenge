@@ -23940,9 +23940,17 @@
 	    'div',
 	    null,
 	    _react2.default.createElement(_Header2.default, null),
-	    _react2.default.createElement(_PriceFilter2.default, null),
-	    _react2.default.createElement(_SortBy2.default, null),
-	    _react2.default.createElement(_ProductList2.default, null)
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'product-input-wrapper' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'input-wrapper' },
+	        _react2.default.createElement(_PriceFilter2.default, null),
+	        _react2.default.createElement(_SortBy2.default, null)
+	      ),
+	      _react2.default.createElement(_ProductList2.default, null)
+	    )
 	  );
 	};
 
@@ -24192,7 +24200,7 @@
 	    products.map(function (product) {
 	      return _react2.default.createElement(_Product2.default, {
 	        key: product.id,
-	        imgSrc: 'https://' + product.mainImage.ref,
+	        imgSrc: 'https:' + product.mainImage.ref,
 	        name: product.name,
 	        price: '$' + (product.defaultPriceInCents / 100).toFixed(2)
 	      });
@@ -24217,7 +24225,7 @@
 /* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -24234,19 +24242,19 @@
 	      name = _ref.name,
 	      price = _ref.price;
 	  return _react2.default.createElement(
-	    'li',
-	    null,
-	    _react2.default.createElement('img', { src: imgSrc }),
+	    "li",
+	    { className: "item" },
+	    _react2.default.createElement("img", { src: imgSrc }),
 	    _react2.default.createElement(
-	      'div',
+	      "div",
 	      null,
 	      _react2.default.createElement(
-	        'div',
+	        "div",
 	        null,
 	        name
 	      ),
 	      _react2.default.createElement(
-	        'div',
+	        "div",
 	        null,
 	        price
 	      )
