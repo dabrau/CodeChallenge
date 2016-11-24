@@ -12,13 +12,7 @@ let store = createStore(
   applyMiddleware(thunkMiddleware)
 )
 
-let unsubscribe = store.subscribe(() =>
-  console.log(store.getState())
-)
-
 store.dispatch(fetchProducts())
-
-
 
 render(
   <Provider store={store}>
@@ -26,16 +20,3 @@ render(
   </Provider>,
   document.getElementById('root')
 )
-
-
-
-// import {setPriceFilter, setSortOrder, setSortByProperty} from './actions'
-
-// store.dispatch(setPriceFilter(20))
-// store.dispatch(setPriceFilter(30))
-// store.dispatch(setSortByProperty('PRICE'))
-// store.dispatch(setSortOrder('DSC'))
-
-
-
-// unsubscribe()
