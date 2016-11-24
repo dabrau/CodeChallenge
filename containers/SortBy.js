@@ -1,21 +1,19 @@
 import { SortByOptions, SortByDefaultOption, setSortBy } from '../actions'
-import SortBy from '../components/SortBy'
-
-const mapStateToProps = (state) => {
-  return {
-    defaultOption: SortByDefaultOption,
-    options: Object.keys(SortByOptions).map(option => SortByOptions[option])
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onSelect: (sortBy) => {
-      dispatch(setSortBy(sortBy))
-    } 
-  }
-}
-
 import { connect } from 'react-redux'
+import React, { PropTypes } from 'react'
 
-export default connect(mapStateToProps, mapDispatchToProps)(SortBy)
+const SortBy = ({dispatch}) => {
+  const options = Object.keys(SortByOptions).map(option => SortByOptions[option])
+  const defaultOption = SortByDefaultOption
+
+  return <div>
+    <label htmlFor="sort-by-selector">Sort by</label>
+    <select id="sort-by-selector" onChange={(e) => dispatch(setSortBy(e.target.value))} label="Sort by" defaultValue={defaultOption}>
+      {options.map(option => 
+         <option key={option} value={option} >{option}</option>
+      )}
+    </select>
+  </div>
+}
+
+export default connect()(SortBy)
